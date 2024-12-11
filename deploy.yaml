@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
-  namespace: demo  # Make sure this matches your ArgoCD app namespace
+  namespace: default  # Make sure this matches your ArgoCD app namespace
 spec:
   replicas: 2
   selector:
