@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: my-certificate-1
+  namespace: argocd
+spec:
+  secretName: argocd-tls-1
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: argocd.simplereact.online
+  dnsNames:
+    - argocd.simplereact.online
+  privateKey:
+    algorithm: RSA
+  usages:
+    - digital signature
+    - key encipherment
+  renewBefore: 24h
+  duration: 2160h # 90 days
